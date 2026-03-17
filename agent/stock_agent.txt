@@ -1,0 +1,33 @@
+from langchain_openai import ChatOpenAI
+from langchain.agents import create_tool_calling_agent, AgentExecutor
+from langchain_core.prompts import ChatPromptTemplate
+
+from tools.stock_tools import (
+    get_latest_stock_price,
+    predict_stock_price_lstm,
+    predict_future_prices_lstm,
+    train_rl_agent,
+    simulate_trading
+)
+
+llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
+
+tools = [
+    get_latest_stock_price,
+    predict_stock_price_lstm,
+    predict_future_prices_lstm,
+    train_rl_agent,
+    simulate_trading
+]
+
+prompt = ChatPromptTemplate.from_messages([
+    ("system", """You are a financial analysis AI agent.
+Your goal is to provide insightful stock analysis and train RL trading agents."""),
+    ("placeholder", "{chat_history}"),
+    ("human", "{input}"),
+    ("placeholder", "{agent_scratchpad}")
+])
+
+agent = create_tool_calling_agent(llm, tools, prompt)
+
+agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)

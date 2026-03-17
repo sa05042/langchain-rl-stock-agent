@@ -1,0 +1,10 @@
+python-dotenv
+numpy
+pandas
+yfinance
+scikit-learn
+tensorflow
+gymnasium
+stable-baselines3
+langchain
+langchain-openai
