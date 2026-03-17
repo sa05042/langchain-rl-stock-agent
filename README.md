@@ -66,6 +66,34 @@ The system integrates three AI components:
 					│
 					└── agent/
 						└── stock_agent.py
+### **Root Files**
+- **`main.py`** – Entry point of the project. Runs the agent and example simulations.  
+- **`requirements.txt`** – Lists all Python dependencies required to run the project.  
+- **`README.md`** – Project documentation file.  
+- **`.env.example`** – Template for environment variables (e.g., API keys). Copy to `.env` and add your credentials.  
+
+### **Folders**
+
+- **`config/`** – Configuration files.  
+  - `env_loader.py` – Loads environment variables from `.env`.  
+
+- **`cache/`** – Caching system for models and agents.  
+  - `model_cache.py` – Stores trained LSTM models and RL agents to avoid retraining.  
+
+- **`data/`** – Handles stock data.  
+  - `stock_data.py` – Fetches historical stock data using `yfinance`.  
+
+- **`models/`** – AI models for stock prediction.  
+  - `lstm_model.py` – Defines and trains LSTM models for forecasting stock prices.  
+
+- **`rl/`** – Reinforcement Learning environments.  
+  - `trading_env.py` – Custom Gym environment for stock trading simulations.  
+
+- **`tools/`** – LangChain tools.  
+  - `stock_tools.py` – Implements functions for training agents, simulating trading, and predicting stock prices.  
+
+- **`agent/`** – LangChain agent logic.  
+  - `stock_agent.py` – Integrates the LLM (ChatOpenAI), tools, and executes queries for analysis and trading.
 						
 
 ## **Features**
