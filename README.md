@@ -110,6 +110,23 @@ Evaluates the RL agent on unseen test data.
 ### **Natural Language AI Agent**
 LangChain agent interprets user queries and executes the correct tools.
 
+## **Requirements**
+Main dependencies:
+- Python 3.9+
+- TensorFlow
+- Stable-Baselines3
+- Gymnasium
+- LangChain
+- OpenAI API
+- yfinance
+- scikit-learn
+- numpy
+- pandas
+				
+Install using:
+	
+	pip install -r requirements.txt
+
 ## **Installation**
 Clone the repository:
 			
@@ -130,23 +147,6 @@ Create environment file
 Add OpenAI key in .env.
 	
 	OPENAI_API_KEY=your_openai_api_key
-
-## **Requirements**
-Main dependencies:
-- Python 3.9+
-- TensorFlow
-- Stable-Baselines3
-- Gymnasium
-- LangChain
-- OpenAI API
-- yfinance
-- scikit-learn
-- numpy
-- pandas
-				
-Install using:
-	
-	pip install -r requirements.txt
 
 ## **Running the Project**
 
