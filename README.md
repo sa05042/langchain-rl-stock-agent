@@ -39,7 +39,7 @@ The system integrates three AI components:
 			 └── Trading Simulation
 
 ## **Repository Structure**
-					langchain-rl-stock-agent/
+		langchain-rl-stock-agent/
 					│
 					├── main.py
 					├── requirements.txt
